@@ -31,6 +31,22 @@ void onMsghandler(char *topic, uint8_t* msg, unsigned int msglen) { //
   send_json("ปิดไฟ เรียบร้อยแล้ว");
     digitalWrite(D0, LOW);          // LED off
   }
+  if ( msgLINE == "ON2" || msgLINE == "On2" || msgLINE == "on2" ) {
+  send_json("เปิดไฟ2 เรียบร้อยแล้ว");
+    digitalWrite(D4, HIGH);         // LED on
+  }
+  else if ( msgLINE == "OFF2" || msgLINE == "Off2"  || msgLINE == "off2" ) {
+  send_json("ปิดไฟ2 เรียบร้อยแล้ว");
+    digitalWrite(D4, LOW);          // LED off
+  }
+  if ( msgLINE == "ON3" || msgLINE == "On3" || msgLINE == "on3" ) {
+  send_json("เปิดไฟ3 เรียบร้อยแล้ว");
+    digitalWrite(D5, HIGH);         // LED on
+  }
+  else if ( msgLINE == "OFF3" || msgLINE == "Off3"  || msgLINE == "off3" ) {
+  send_json("ปิดไฟ3 เรียบร้อยแล้ว");
+    digitalWrite(D5, LOW);          // LED off
+  }
 }
 
 void onConnected(char *attribute, uint8_t* msg, unsigned int msglen) {
